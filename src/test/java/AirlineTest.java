@@ -2,6 +2,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 public class AirlineTest {
 
@@ -58,7 +60,25 @@ public class AirlineTest {
 
     }
 
+    @Test
 
+//    public void test_display_of_all_flights(){
+//        Flight flightToSpain = new Flight("Mallorca", 234);
+//        Flight flightToPortugal = new Flight("Lisbon", 333);
+//        Flight flightToScotland = new Flight("Edinburgh", 546);
+//        Flight flightToAlgeria = new Flight("Algiers", 444);
+//        Flight flightToQatar = new Flight("Doha", 3433);
+//        airline.addNewFlight(flightToSpain);
+//        airline.addNewFlight(flightToPortugal);
+//        airline.addNewFlight(flightToScotland);
+//        airline.addNewFlight(flightToAlgeria);
+//        airline.addNewFlight(flightToQatar);
+//
+//        airline.displayAllFlights();
+//
+//        System.out.println(airline.displayAllFlights());
+//
+//    }
 
 
 
