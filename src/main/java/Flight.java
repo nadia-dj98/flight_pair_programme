@@ -21,7 +21,7 @@ public class Flight {
     public int getFlightId(){
         return this.flightId;
     }
-    public ArrayList<Passenger> getPassengers(){
+    public ArrayList<Passenger> getPassengersOnFlight(){
         return this.passengersOnFlight;
     }
 

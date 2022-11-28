@@ -13,6 +13,7 @@ public class Airline {
         this.allFlights = new ArrayList<>();
         this.allPassengers = new ArrayList<>();
     }
+
     //methods
     public void addNewFlight(Flight flight){
         this.allFlights.add(flight);
@@ -24,7 +25,13 @@ public class Airline {
         return this.allFlights;
     }
 
+    public void bookPassengerOntoFlight(Flight flight, Passenger passenger) {
+        this.allPassengers.add(passenger);
+    }
 
+    public int countNumberOfFlights() {
+        return this.allFlights.size();
+    }
 
 
 //getters and setters
