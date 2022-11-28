@@ -25,8 +25,9 @@ public class Airline {
         return this.allFlights;
     }
 
-    public void bookPassengerOntoFlight(Flight flight, Passenger passenger) {
+    public String bookPassengerOntoFlight(Flight flight, Passenger passenger) {
         this.allPassengers.add(passenger);
+        return String.format("%s has been booked on flight to %s", passenger.getName(), flight.getDestination());
     }
 
     public int countNumberOfFlights() {
