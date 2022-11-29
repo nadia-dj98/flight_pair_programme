@@ -53,32 +53,43 @@ public class AirlineTest {
         Passenger harry = new Passenger("Harry", "harry.xyz@BNTA.com", 546);
         airline.addNewFlight(flightToSpain);
         airline.bookPassengerOntoFlight(flightToSpain, nadia);
-        String expected = "Nadia has been booked on flight to Mallorca";
-        String actual = airline.bookPassengerOntoFlight(flightToSpain, nadia);
+        airline.bookPassengerOntoFlight(flightToSpain, harry);
 
+
+        ArrayList<Passenger> actual = flightToSpain.getPassengersOnFlight();
+        System.out.println(flightToSpain.getPassengersOnFlight());
+
+    }
+
+    @Test
+    public void test_display_of_all_flights(){
+        Flight flightToSpain = new Flight("Mallorca", 234);
+        Flight flightToPortugal = new Flight("Lisbon", 333);
+        Flight flightToScotland = new Flight("Edinburgh", 546);
+        Flight flightToAlgeria = new Flight("Algiers", 444);
+        Flight flightToQatar = new Flight("Doha", 3433);
+        airline.addNewFlight(flightToSpain);
+        airline.addNewFlight(flightToPortugal);
+        airline.addNewFlight(flightToScotland);
+        airline.addNewFlight(flightToAlgeria);
+        airline.addNewFlight(flightToQatar);
+
+        airline.displayAllFlights();
 
 
     }
 
     @Test
+    public  void test_adding_passengers_onto_airline_system() {
+        Passenger nadia = new Passenger("Nadia", "nadia.djeridi@BNTA.com", 444);
+        Passenger harry = new Passenger("Harry", "harry.xyz@BNTA.com", 546);
+        airline.addPassengerOntoSystem(nadia);
+        airline.addPassengerOntoSystem(harry);
+        int expected = 2;
+        int actual = airline.getAllPassengers().size();
+        assertEquals(actual, expected);
 
-//    public void test_display_of_all_flights(){
-//        Flight flightToSpain = new Flight("Mallorca", 234);
-//        Flight flightToPortugal = new Flight("Lisbon", 333);
-//        Flight flightToScotland = new Flight("Edinburgh", 546);
-//        Flight flightToAlgeria = new Flight("Algiers", 444);
-//        Flight flightToQatar = new Flight("Doha", 3433);
-//        airline.addNewFlight(flightToSpain);
-//        airline.addNewFlight(flightToPortugal);
-//        airline.addNewFlight(flightToScotland);
-//        airline.addNewFlight(flightToAlgeria);
-//        airline.addNewFlight(flightToQatar);
-//
-//        airline.displayAllFlights();
-//
-//        System.out.println(airline.displayAllFlights());
-//
-//    }
+    }
 
 
 

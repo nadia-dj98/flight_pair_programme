@@ -12,8 +12,15 @@ public class Passenger {
         this.uniqueId = uniqueId;
     }
 
-
-    // getters and setters
+    @Override
+    public String toString() {
+        return "Passenger{" +
+                "name='" + name + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", uniqueId=" + uniqueId +
+                '}';
+    }
+// getters and setters
 
     public String getName(){
         return this.name;

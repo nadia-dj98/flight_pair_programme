@@ -4,6 +4,7 @@ public class Flight {
 
     private String destination;
     private int flightId;
+    
     private ArrayList<Passenger> passengersOnFlight;
 
     public Flight(String destination, int flightId){
@@ -12,6 +13,14 @@ public class Flight {
         this.passengersOnFlight = new ArrayList<>();
     }
 
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "destination='" + destination + '\'' +
+                ", flightId=" + flightId +
+                ", passengersOnFlight=" + passengersOnFlight +
+                '}';
+    }
 
     //getters and setters
 
@@ -24,6 +33,13 @@ public class Flight {
     public ArrayList<Passenger> getPassengersOnFlight(){
         return this.passengersOnFlight;
     }
+    
+    public void addPassengersToFlight(Passenger passengerToFlight) {
+        
+        this.passengersOnFlight.add(passengerToFlight);
+    }
+
+    
 
     public void setDestination(String destination) {
         this.destination = destination;

@@ -4,6 +4,8 @@ public class Airline {
 
 
     private String name;
+
+
     private ArrayList<Flight> allFlights;
     private ArrayList<Passenger> allPassengers;
 
@@ -21,13 +23,22 @@ public class Airline {
     public void cancelFlight(Flight flight){
         this.allFlights.remove(flight);
     }
+
     public ArrayList<Flight> displayAllFlights(){
-        return this.allFlights;
+        for(Flight individualFlight : this.allFlights){
+
+            System.out.println(individualFlight.toString());
+        }
+        return  this.allFlights;
     }
 
-    public String bookPassengerOntoFlight(Flight flight, Passenger passenger) {
-        this.allPassengers.add(passenger);
-        return String.format("%s has been booked on flight to %s", passenger.getName(), flight.getDestination());
+    public void  bookPassengerOntoFlight(Flight flight, Passenger passenger) {
+        flight.addPassengersToFlight(passenger);
+//        return String.format("%s has been booked on flight to %s", passenger.getName(), flight.getDestination());
+    }
+
+    public void addPassengerOntoSystem(Passenger passenger) {
+        allPassengers.add(passenger);
     }
 
     public int countNumberOfFlights() {
@@ -43,7 +54,9 @@ public class Airline {
         return this.allPassengers;
     }
 
-
+    public ArrayList<Flight> getAllFlights() {
+        return this.allFlights;
+    }
 
 
 
