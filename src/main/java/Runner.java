@@ -65,7 +65,44 @@ public class Runner {
 
             }
 
+            if (choice == 4) {
+                Scanner requestFlightId = new Scanner(System.in);
+                System.out.println("Please enter the flight Id you wish to book your passenger onto: ");
+                int flightId = requestFlightId.nextInt();
 
+                Scanner requestPassengerId = new Scanner(System.in);
+                System.out.println("Please enter the passenger id to book onto flight " + flightId);
+                int passengerId = requestPassengerId.nextInt();
+
+                for(Flight flight: airline.getAllFlights()) {
+                    if(flight.getFlightId() == flightId) {
+                        for(Passenger passenger: airline.getAllPassengers()) {
+                            if(passenger.getUniqueId() == passengerId) {
+                                airline.bookPassengerOntoFlight(flight, passenger);
+                            }
+                        }
+                    } else {
+                        System.out.println("Incorrect id entered.");
+                    }
+                }
+
+            }
+
+            if(choice == 5) {
+                Scanner cancelFlight = new Scanner(System.in);
+                System.out.println("Which flight would you like to cancel? Please enter the flight id");
+                int flightId = cancelFlight.nextInt();
+
+                for(Flight flight: airline.getAllFlights()) {
+                    if(flight.getFlightId() == flightId) {
+                        airline.cancelFlight(flight);
+                        System.out.println("Flight " + flight.getFlightId() + " has been successfully cancelled.");
+                        break;
+                    } else {
+                        System.out.println("Flight does not exist.");
+                    }
+                }
+            }
 
             if (choice == 6) {
                 running = false;
